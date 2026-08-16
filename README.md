@@ -56,7 +56,7 @@ FastAPI Backend
 Streamlit Frontend
      ↓
 Loan Default Prediction
-
+```
 # Data Analysis & Feature Engineering
 
 The project includes:
