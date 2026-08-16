@@ -32,7 +32,7 @@ Important features include:
 
 The target variable is imbalanced, so evaluation focuses on metrics beyond accuracy.
 
-## Project Workflow
+# Project Workflow
 
 ```text
 Raw Dataset
@@ -80,7 +80,7 @@ handle_unknown="ignore"
 
 The preprocessing pipeline is fitted only on the training data and then applied to the test data.
 
-# Model Development
+### Model Development
 
 Two classification models were explored:
 1.Logistic Regression
@@ -101,7 +101,7 @@ Train/Test Data
 Training records: 204,277
 Testing records:   51,070
 
-# Model Evaluation
+### Model Evaluation
 
 The models were evaluated using:
 Accuracy
@@ -114,7 +114,7 @@ Classification Report
 Accuracy alone is not sufficient because the dataset contains significantly more non-default cases than default cases.
 Detailed evaluation is available in: 05_Model_Evaluation.ipynb
 
-# Decision Threshold
+### Decision Threshold
 
 The Random Forest generates a probability of default.
 The probability is compared with a saved decision threshold:
@@ -124,7 +124,7 @@ The probability is compared with a saved decision threshold:
 
 This allows the final classification to be based on the selected risk threshold rather than relying only on the model's default classification.
 
-# Saved Machine Learning Components
+### Saved Machine Learning Components
 preprocessor.pkl
 random_forest_model.pkl
 decision_threshold.pkl
@@ -157,7 +157,7 @@ decision_threshold
 
 Interactive API documentation is available at: http://127.0.0.1:8000/docs
 
-## Streamlit Application
+# Streamlit Application
 
 The frontend is implemented using `streamlit_app.py`.
 
