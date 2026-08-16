@@ -1,0 +1,26 @@
+# Virtual environment
+.venv/
+
+# Python cache
+__pycache__/
+*.py[cod]
+
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# Environment variables
+.env
+
+# Archived old versions
+archive/
+
+# Training artifacts
+X_train_processed.pkl
+X_test_processed.pkl
+y_train.pkl
+y_test.pkl
+
+# OS files
+.DS_Store
+Thumbs.db
+
