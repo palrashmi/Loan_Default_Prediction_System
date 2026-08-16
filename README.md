@@ -157,38 +157,43 @@ decision_threshold
 
 Interactive API documentation is available at: http://127.0.0.1:8000/docs
 
-# Streamlit Application
+## Streamlit Application
 
-The frontend is implemented using streamlit_app.py.
+The frontend is implemented using `streamlit_app.py`.
+
 The application provides a multi-step loan application workflow:
 
+```text
 Applicant Details
-      ↓
+       ↓
 Education & Employment
-      ↓
+       ↓
 Personal Details
-      ↓
+       ↓
 Loan Details
-      ↓
+       ↓
 Application Review
-      ↓
+       ↓
 Prediction
+```
 
-# Features include:
+### Features
 
-Multi-step form
-Input validation
-Persistent form information
-Section-level Edit buttons
-Application review
-Default probability visualization
-Decision threshold comparison
-Final Default / No Default decision
-Prediction details
+- Multi-step form
+- Input validation
+- Persistent form information
+- Section-level Edit buttons
+- Application review
+- Default probability visualization
+- Decision threshold comparison
+- Final Default / No Default decision
+- Prediction details
 
 The Streamlit frontend communicates with the FastAPI backend to obtain predictions.
 
-# Project Structure
+## Project Structure
+
+```text
 Loan_Default_Prediction_System/
 │
 ├── 01_Data_Audit.ipynb
@@ -208,22 +213,23 @@ Loan_Default_Prediction_System/
 ├── requirements.txt
 ├── README.md
 └── .gitignore
+```
 
-# Technologies Used
+## Technologies Used
 
-Python
-Pandas
-NumPy
-Matplotlib
-Seaborn
-Scikit-learn
-Joblib
-FastAPI
-Pydantic
-Uvicorn
-Streamlit
-Jupyter Notebook
-Git & GitHub
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
+- Scikit-learn
+- Joblib
+- FastAPI
+- Pydantic
+- Uvicorn
+- Streamlit
+- Jupyter Notebook
+- Git & GitHub
 
 # Outcome
 
