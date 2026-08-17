@@ -114,7 +114,7 @@ Categorical features are encoded using `OneHotEncoder` with:
 handle_unknown="ignore"
 ```
 
-```markdown
+
 ## 🤖 Model Development
 
 Two classification models were explored:
@@ -143,7 +143,6 @@ The `class_weight="balanced"` setting helps address the imbalanced target variab
 ```
 
 
-```markdown
 ## 📈 Model Evaluation
 
 The models were evaluated using:
@@ -161,7 +160,6 @@ Detailed model evaluation is available in:
 
 ```text
 05_Model_Evaluation.ipynb
-```
 ```
 
 ### Decision Threshold
