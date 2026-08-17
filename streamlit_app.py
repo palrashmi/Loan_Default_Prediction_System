@@ -1410,7 +1410,7 @@ elif current_step == 5:
                 response = requests.post(
                     API_URL,
                     json=payload,
-                    timeout=10
+                    timeout=90
                 )
 
 
