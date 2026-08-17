@@ -20,26 +20,47 @@ The objective of this project is to identify applicants who may have a higher ri
 
 The system provides:
 
-Default probability
-Default / No Default classification
-Decision-threshold-based prediction
-Interactive loan application form
-Risk visualization
-Prediction details
+- Default probability
+- Default / No Default classification
+- Decision-threshold-based prediction
+- Interactive loan application form
+- Risk visualization
+- Prediction details
 
 ## 📊 Dataset
 
-255,347 loan records
-Target: Default
-0 → No Default
-1 → Default
-No Default: approximately 88.4%
-Default: approximately 11.6%
+The dataset contains **255,347 loan records**.
+
+**Target variable:** `Default`
+
+- `0` → No Default
+- `1` → Default
+
+### Target Distribution
+
+- No Default: approximately **88.4%**
+- Default: approximately **11.6%**
+
 The target variable is imbalanced, so model evaluation focuses on metrics beyond accuracy.
+### Important Features
 
-###Important features:
-
-`Age`, `Income`, `LoanAmount`, `CreditScore`, `MonthsEmployed`, `NumCreditLines`, `InterestRate`, `LoanTerm`, `DTIRatio`, `Education`, `EmploymentType`, `MaritalStatus`, `HasMortgage`, `HasDependents`, `LoanPurpose`, `HasCoSigner`, and `LoanDate`.
+1. `Age`
+2. `Income`
+3. `LoanAmount`
+4. `CreditScore`
+5. `MonthsEmployed`
+6. `NumCreditLines`
+7. `InterestRate`
+8. `LoanTerm`
+9. `DTIRatio`
+10. `Education`
+11. `EmploymentType`
+12. `MaritalStatus`
+13. `HasMortgage`
+14. `HasDependents`
+15. `LoanPurpose`
+16. `HasCoSigner`
+17. `LoanDate`
 
 The target variable is imbalanced, so evaluation focuses on metrics beyond accuracy.
 
@@ -70,17 +91,18 @@ Loan Default Prediction
 ```
 
 ## 🔍 Data Analysis & Feature Engineering
+
 The project includes:
 
-Data quality and structure analysis
-Missing-value checks
-Duplicate checks
-Numerical and categorical analysis
-Target distribution analysis
-Distribution and relationship analysis
-Outlier analysis
-Loan date feature extraction
-Feature preprocessing
+- Data quality and structure analysis
+- Missing-value checks
+- Duplicate checks
+- Numerical and categorical analysis
+- Target distribution analysis
+- Distribution and relationship analysis
+- Outlier analysis
+- Loan date feature extraction
+- Feature preprocessing
 
 ### Preprocessing
 
