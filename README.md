@@ -106,50 +106,63 @@ The project includes:
 
 ### Preprocessing
 
-Numerical features are standardized using StandardScaler.
-Categorical features are encoded using OneHotEncoder with:
+Numerical features are standardized using `StandardScaler`.
 
+Categorical features are encoded using `OneHotEncoder` with:
+
+```text
 handle_unknown="ignore"
+```
 
-The preprocessing pipeline is fitted only on the training data and then applied to the test data.
-The original feature set contains 18 features, which are transformed into 33 processed features after preprocessing.
+```markdown
+## 🤖 Model Development
 
-### 🤖Model Development
-Two classification models were explored: 
-1.Logistic Regression 
-2.Random Forest
+Two classification models were explored:
 
-The final application uses Random Forest Classifier.
+1. Logistic Regression
+2. Random Forest Classifier
+
+The final application uses a **Random Forest Classifier**.
 
 ### Random Forest Configuration
-n_estimators = 200
-max_depth = 12 
-class_weight = "balanced" 
-random_state = 42 
-n_jobs = -1
 
-The class_weight="balanced" setting helps handle the imbalanced target variable.
+```text
+n_estimators = 200
+max_depth = 12
+class_weight = "balanced"
+random_state = 42
+n_jobs = -1
+```
+
+The `class_weight="balanced"` setting helps address the imbalanced target variable.
 
 ### Train/Test Split
-Training records: 204,277
-Testing records: 51,070
 
-### 📈Model Evaluation
+- Training records: **204,277**
+- Testing records: **51,070**
+```
+
+
+```markdown
+## 📈 Model Evaluation
 
 The models were evaluated using:
 
-Accuracy
-Precision
-Recall
-F1 Score
-ROC-AUC
-Classification Report
+- Accuracy
+- Precision
+- Recall
+- F1 Score
+- ROC-AUC
+- Classification Report
 
 Accuracy alone is not sufficient because the dataset contains significantly more non-default cases than default cases.
 
 Detailed model evaluation is available in:
 
+```text
 05_Model_Evaluation.ipynb
+```
+```
 
 ### Decision Threshold
 The Random Forest generates a probability of default. The probability is compared with a saved decision threshold:
