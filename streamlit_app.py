@@ -18,7 +18,7 @@ st.set_page_config(
 # API CONFIGURATION
 # =========================================================
 
-API_URL = "http://127.0.0.1:8000/predict"
+API_URL = "https://loan-default-api-t0dv.onrender.com/predict"
 
 
 # =========================================================
