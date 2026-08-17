@@ -140,10 +140,8 @@ The `class_weight="balanced"` setting helps address the imbalanced target variab
 
 - Training records: **204,277**
 - Testing records: **51,070**
-```
 
-
-## 📈 Model Evaluation
+##  Model Evaluation
 
 The models were evaluated using:
 
@@ -156,61 +154,76 @@ The models were evaluated using:
 
 Accuracy alone is not sufficient because the dataset contains significantly more non-default cases than default cases.
 
-Detailed model evaluation is available in:
+Detailed model evaluation is available in `05_Model_Evaluation.ipynb`.
+
+### 🎚️ Decision Threshold
+
+The Random Forest model generates a probability of default.
+
+The probability is compared against a saved decision threshold:
 
 ```text
-05_Model_Evaluation.ipynb
+Probability ≥ Threshold
+        ↓
+     Default
+
+Probability < Threshold
+        ↓
+   No Default
 ```
 
-### Decision Threshold
-The Random Forest generates a probability of default. The probability is compared with a saved decision threshold:
-
-1.Probability ≥ Threshold → Default 
-2.Probability < Threshold → No Default
-
-This allows the final classification to be based on the selected risk threshold rather than relying only on the model's default classification.
-
 ### Saved Machine Learning Components
+
 The trained system uses the following serialized components:
 
-preprocessor.pkl
-random_forest_model.pkl
-decision_threshold.pkl
+- `preprocessor.pkl`
+- `random_forest_model.pkl`
+- `decision_threshold.pkl`
 
 These files allow the deployed application to generate predictions without retraining the model.
 
 ## ⚡FastAPI Backend
-The backend is implemented using FastAPI in app.py.
-Endpoint :POST /predict
 
-The API:
+The backend is implemented using FastAPI in:
 
-Receives loan application data
-Validates input using Pydantic
-Converts the input into a DataFrame
-Processes LoanDate
-Creates LoanYear and LoanMonth
-Applies the saved preprocessing pipeline
-Generates default probability
-Applies the decision threshold
-Returns the prediction result
+`app.py`
+
+### Endpoint
+
+`POST /predict`
+
+### The API
+
+- Receives loan application data
+- Validates input using Pydantic
+- Converts the input into a DataFrame
+- Processes `LoanDate`
+- Creates `LoanYear` and `LoanMonth`
+- Applies the saved preprocessing pipeline
+- Generates default probability
+- Applies the decision threshold
+- Returns the prediction result
 
 ### API Response
 
 The response includes:
 
-prediction
-default_probability
-decision_threshold
-result
+- `prediction`
+- `default_probability`
+- `decision_threshold`
+- `result`
 
 ### API Documentation
 
 The FastAPI application provides interactive Swagger documentation through:
-/docs
-The deployed API is hosted separately from the Streamlit frontend
+
+`/docs`
+
+The deployed API is hosted separately from the Streamlit frontend.
+
 
 ## 🖥️ Streamlit Application
+
 The frontend is implemented using streamlit_app.py.
 The application provides a multi-step loan application workflow:
 
@@ -227,19 +240,22 @@ Application Review
        ↓
 Prediction
 ```
+
 ### Features
 
-Multi-step form
-Input validation
-Persistent form information
-Section-level Edit buttons
-Application review
-Default probability visualization
-Decision threshold comparison
-Final Default / No Default decision
-Prediction details
+- Multi-step form
+- Input validation
+- Persistent form information
+- Section-level Edit buttons
+- Application review
+- Default probability visualization
+- Decision threshold comparison
+- Final Default / No Default decision
+- Prediction details
 
-The Streamlit frontend sends the completed application to the FastAPI /predict endpoint and displays the returned prediction.
+The Streamlit frontend sends the completed application to the FastAPI `/predict` endpoint and displays the returned prediction.
+
+
 
 ## 🏗️ Application Architecture
 
