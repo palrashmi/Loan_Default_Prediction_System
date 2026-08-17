@@ -255,11 +255,49 @@ Prediction
 
 The Streamlit frontend sends the completed application to the FastAPI `/predict` endpoint and displays the returned prediction.
 
-
-
 ## 🏗️ Application Architecture
 
-User │ ▼ ┌──────────────────┐ │ Streamlit │ │ Frontend │ └────────┬─────────┘ │ │ HTTP POST ▼ ┌──────────────────┐ │ FastAPI │ │ /predict │ └────────┬─────────┘ │ ▼ ┌──────────────────┐ │ Preprocessor │ │ .pkl │ └────────┬─────────┘ │ ▼ ┌──────────────────┐ │ Random Forest │ │ Model │ └────────┬─────────┘ │ ▼ Default Probability │ ▼ Decision Threshold │ ▼ Final Prediction
+The application follows a simple end-to-end prediction architecture:
+
+```text
+                    User
+                      │
+                      ▼
+            ┌──────────────────┐
+            │    Streamlit     │
+            │    Frontend      │
+            └────────┬─────────┘
+                     │
+                     │ HTTP POST
+                     ▼
+            ┌──────────────────┐
+            │     FastAPI      │
+            │     /predict     │
+            └────────┬─────────┘
+                     │
+                     ▼
+            ┌──────────────────┐
+            │   Preprocessor   │
+            │      .pkl        │
+            └────────┬─────────┘
+                     │
+                     ▼
+            ┌──────────────────┐
+            │  Random Forest   │
+            │      Model       │
+            └────────┬─────────┘
+                     │
+                     ▼
+             Default Probability
+                     │
+                     ▼
+             Decision Threshold
+                     │
+                     ▼
+               Final Prediction
+```
+
+The Streamlit frontend collects the loan application information and sends it to the FastAPI `/predict` endpoint. The FastAPI backend applies the saved preprocessing pipeline and Random Forest model, generates the default probability, applies the decision threshold, and returns the final prediction.
 
 
 ## 📁 Project Structure
@@ -286,49 +324,68 @@ Loan_Default_Prediction_System/
 ```
 
 ## 🛠️ Technologies Used
-#### Programming & Data Analysis
 
-Python
-Pandas
-NumPy
-Matplotlib
-Seaborn
+### Programming & Data Analysis
 
-#### Machine Learning
+- Python
+- Pandas
+- NumPy
+- Matplotlib
+- Seaborn
 
-Scikit-learn
-Joblib
+### Machine Learning
 
-#### Backend
+- Scikit-learn
+- Joblib
 
-FastAPI
-Pydantic
-Uvicorn
+### Backend
 
-#### Frontend
-Streamlit
+- FastAPI
+- Pydantic
+- Uvicorn
 
-#### Development & Version Control
-Jupyter Notebook
-Git & GitHub
+### Frontend
+
+- Streamlit
+
+### Development & Version Control
+
+- Jupyter Notebook
+- Git
+- GitHub
 
 ## 🚀 Deployment
 
 The project uses a two-part deployment architecture:
+
 ```text
-Streamlit Cloud │ │ ▼ Streamlit Frontend │ │ HTTP Request ▼ Render │ ▼ FastAPI Backend │ ▼ Machine Learning Model
+Streamlit Cloud
+      │
+      ▼
+Streamlit Frontend
+      │
+      │ HTTP Request
+      ▼
+Render
+      │
+      ▼
+FastAPI Backend
+      │
+      ▼
+Machine Learning Model
 ```
+
 The frontend and backend are deployed independently and communicate through the FastAPI REST API.
 
 ## 🧪 Testing
 
 The deployed system was tested through:
 
-FastAPI Swagger documentation
-Streamlit application
-Multiple loan application input sets
-Comparison of API and Streamlit prediction results
-Fresh-browser/Incognito testing
+- FastAPI Swagger documentation
+- Streamlit application
+- Multiple loan application input sets
+- Comparison of API and Streamlit prediction results
+- Fresh-browser/Incognito testing
 
 The same input submitted through the API and Streamlit application produces the corresponding prediction through the same FastAPI/ML prediction pipeline.
 
@@ -336,6 +393,7 @@ The same input submitted through the API and Streamlit application produces the 
 
 The project delivers a complete end-to-end Loan Default Prediction System combining:
 
-##### Machine Learning + Model Serialization + FastAPI + Streamlit + Cloud Deployment
+**Machine Learning + Model Serialization + FastAPI + Streamlit + Cloud Deployment**
 
 The final application can accept loan application information, estimate the probability of default, apply a decision threshold, and present the final risk classification through an interactive web interface.
+
