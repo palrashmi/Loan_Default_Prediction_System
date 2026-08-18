@@ -1,4 +1,4 @@
-# Loan_Default_Prediction_System
+# Loan Default Prediction System
 
 An end-to-end Machine Learning application that predicts the likelihood of loan default using Random Forest, FastAPI, and Streamlit.
 
