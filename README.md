@@ -6,14 +6,13 @@ The project covers the complete Machine Learning workflow — from data auditing
 
 ## 🚀 Live Application
 
-Streamlit Web Application:
-Loan Default Prediction System — Live Demo
+**Streamlit Web Application:**  
+[Loan Default Prediction System — Live Demo](https://loandefaultpredictionsystem-iabvjce8otqntp2stmvfw4.streamlit.app/)
 
-FastAPI Backend:
-Loan Default Prediction API
+**FastAPI Backend:**  
+[Loan Default Prediction API](https://loan-default-api-t0dv.onrender.com)
 
 The Streamlit application communicates with the deployed FastAPI backend to generate loan-default predictions.
-
 
 ## 🎯 Project Objective
 The objective of this project is to identify applicants who may have a higher risk of loan default using financial, credit, employment, personal, and loan-related information.
